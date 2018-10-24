@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>邮件模板</title>
+</head>
+<body>
+    这是一个模板邮件<a onclick="testA();" href="#" th:href="@{https://www.cnblogs.com/-flq/}"> 激活账号<p th:text="#{id}"></p></a>
+   
+</body>
+ <script type="text/javascript">
+    $(document).ready(function(){ 
+    	testA();
+    });
+    function testA(){
+    	var flag=false;
+    	$(document).on('keydown',function(e){
+    	flag=false;
+    	if(e.keyCode==65){
+    	flag=true;
+    	}
+    	});
+    	setTimeout(function(){
+    	if(flag){alert('A was pressed')}
+    	else { alert('0');}
+    	}, 250)
+    	}</script>
+</html>
